@@ -1,0 +1,166 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Title of the Slide}
+		\framesubtitle{Subtitle of the Slide: Use Only if Necessary\dots}
+	
+	\begin{itemize}
+		\item Bulalet point 1.
+		\item Bullet point 2 --- \alert{you can emphasise} a text.
+	\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Subtopic 1} % Change, please!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Title of the Slide}
+		\framesubtitle{Slide without Bullets}
+
+	Text:
+
+	\vfill
+
+	\begin{block}{}
+		Blocks are good for important notions.
+	\end{block}
+
+	\vfill
+
+	\begin{alertblock}{}
+		Alertblocks are even better to catch the attention.
+	\end{alertblock}
+
+	\vfill
+
+	\begin{alertblock}{Title}
+		You can have the title in the (alert)block.
+	\end{alertblock}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Subtopic 2} % Change, please!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Title of the Slide}
+		\framesubtitle{Slide with a Figure from a File}
+
+	\begin{figure}
+		\includegraphics[width=6cm]{./figures/TIiK_channel_mutual_new}
+		\caption{Caption of the figure}
+	\end{figure}
+
+	\vspace{-0.5cm}
+
+	\tiny I am sorry that the example figures and the table concern the information theory \smiley
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Title of the Slide}
+		\framesubtitle{Slide with a Figure Drawn with \texttt{tikz}}
+
+	\vspace{-0.5cm}
+
+	\begin{changemargin}{-1cm}{-1cm}
+		\begin{figure}
+			\begin{tikzpicture}[x=2.5cm,y=2cm]
+				\node[draw,thick,rectangle,fill=blue!25,align=center,text width = 1.5cm] (SOURCE) at (0,0) {\bfseries Source}; 
+				\node[draw,thick,rectangle,fill=green!25,label=above:{\it Compression},align=center,text width = 1.5cm] (SOURCE_ENCODER) at (1,0) {\bfseries Source encoder}; 
+				\node[draw,thick,rectangle,fill=magenta!25,label=above:{\it Security},align=center,text width = 2.00cm] (ENCRYPTION) at (2,0) {\bfseries Encryption}; 
+				\node[draw,thick,rectangle,fill=red!25,align=center,text width = 1.5cm] (CHANNEL_ENCODER) at (3,0) {\bfseries Channel encoder};
+				\node[align=center,text width = 1.5cm,yshift=1.05cm] at (CHANNEL_ENCODER) {\it Error\\protection}; 
+				\node[draw,thick,rectangle,fill=gray!25,align=center,text width = 2.25cm] (MODULATOR) at (4,0) {\bfseries Modulator}; 
+				\node[draw,thick,rectangle,fill=yellow!25,align=center,text width = 1.5cm] (CHANNEL) at (4,-1) {\bfseries Channel}; 
+				\node[draw,thick,rectangle,fill=gray!25,align=center,text width = 2.25cm] (DEMODULATOR) at (4,-2) {\bfseries Demodulator}; 
+				\node[draw,thick,rectangle,fill=red!25,align=center,text width = 1.5cm] (CHANNEL_DECODER) at (3,-2) {\bfseries Channel decoder}; 
+				\node[draw,thick,rectangle,fill=magenta!25,align=center,text width = 2.00cm] (DECRYPTION) at (2,-2) {\bfseries Decryption}; 
+				\node[draw,thick,rectangle,fill=green!25,align=center,text width = 1.5cm] (SOURCE_DECODER) at (1,-2) {\bfseries Source decoder}; 
+				\node[draw,thick,rectangle,fill=blue!25,align=center,text width = 1.5cm] (SINK) at (0,-2) {\bfseries Sink}; 
+				\node[starburst, fill=yellow, draw=red,line width=1pt,shift={(0.25,0.60cm)}] (NOISE) at (CHANNEL) {\color{red} \bf \tiny !};
+	% 			\node[align=center,text width = 1.5cm] at (NOISE) {\color{red} Noise,\\errors,\\frauds};
+				\draw[thick,->] (SOURCE) -- (SOURCE_ENCODER) ;
+				\draw[thick,->] (SOURCE_ENCODER) -- (ENCRYPTION);
+				\draw[thick,->] (ENCRYPTION) -- (CHANNEL_ENCODER);
+				\draw[thick,->] (CHANNEL_ENCODER) -- (MODULATOR);
+				\draw[thick,->] (MODULATOR) -- (CHANNEL);
+				\draw[thick,->] (CHANNEL) -- (DEMODULATOR);
+				\draw[thick,->] (DEMODULATOR) -- (CHANNEL_DECODER);
+				\draw[thick,->] (CHANNEL_DECODER) -- (DECRYPTION);
+				\draw[thick,->] (DECRYPTION) -- (SOURCE_DECODER);
+				\draw[thick,->] (SOURCE_DECODER) -- (SINK);
+				\coordinate (c1) at ($(CHANNEL_DECODER.south) + (0,-0.25cm)$);
+				\draw[thick] (CHANNEL_DECODER) -- (c1);
+				\draw[thick,->] (c1) -| (DEMODULATOR.south);
+				\node at (3.5,-2.5) {\it Iterative decoding};
+				\node[align=center,text width = 1.5cm] (SCT) at (1,-1) {Source\\coding\\theorem};
+				\draw[->] (SCT) -- +(0,1.25cm);
+				\draw[->] (SCT) -- +(0,-1.25cm);
+				\node[align=center,text width = 1.5cm] (CCT) at (3,-1) {Channel\\coding\\theorem};
+				\draw[->] (CCT) -- +(0,1.25cm);
+				\draw[->] (CCT) -- +(0,-1.25cm);
+				\draw[->] (CCT) -- +(0.5,0cm);
+			\end{tikzpicture}
+		\end{figure}		
+	\end{changemargin}
+
+	\vspace{-0.35cm}
+
+	\tiny Source: \bibentry{Moon05a}.
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Title of the Slide}
+		\framesubtitle{Slide with a Table}
+	
+		\begin{table}
+			\caption{Caption of the Table}
+			\begin{center}
+				\setlength\arrayrulewidth{2pt}
+					\begin{tabular}{|>{\columncolor[rgb]{0,0.9,0.3}\color{white}}c|>{\columncolor[rgb]{0,0.9,0.1}\color{white}}c|}
+					\hline
+					\rowcolor[rgb]{0,0.5,0} \bfseries Data  & \bfseries Entropy \\
+					\hline%
+					\hline Plain text                        	  & $4{.}347$\\
+					\hline Native executables	                   & $5{.}099$\\
+					\hline Packed executables                   & $6{.}801$\\
+					\hline Encrypted executables                & $7{.}175$\\
+					\hline
+				\end{tabular}
+			\end{center}
+		\end{table}
+
+		\vfill
+
+		\tiny Source: \bibentry{Lyda07a}.
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	
+	\begin{center}
+		\Huge \textbf{Thank you for your attention!}
+	\end{center}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	
+	\begin{center}
+		\Huge \textbf{Q \& A}
+	\end{center}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

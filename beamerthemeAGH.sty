@@ -1,0 +1,86 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                            %
+% LaTeX Beamer presentation theme, ver. 1.0                                  %
+% AGH University of Science and Technology, Department of Telecommunications %
+% Created by Robert Wójcik and Rafa³ Stankiewicz                             %
+%                                                                            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newif\ifbeamer@ukladagh
+\beamer@ukladaghfalse \DeclareOptionBeamer{ukladagh}{\beamer@ukladaghtrue}
+
+\mode<presentation>
+
+\DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
+\ProcessOptionsBeamer
+
+\usecolortheme{whale}
+\usecolortheme{orchid}
+\useinnertheme[shadow]{rounded}
+
+\setbeamerfont{date}{size=\tiny}
+\setbeamerfont{institute}{size=\tiny}
+\setbeamerfont{author}{size=\footnotesize}
+
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight]{./files/tlom}}
+
+\defbeamertemplate*{title page}{rounded}
+{
+  \leftskip=2.1cm
+  \vspace*{2.6cm}
+    \usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle\par
+    \usebeamercolor[fg]{subtitle}\usebeamerfont{subtitle}\insertsubtitle
+
+  \vfill
+      \usebeamercolor[fg]{author}\usebeamerfont{author}\insertauthor\par
+  \vspace*{\baselineskip}
+
+    \usebeamercolor[fg]{institute}\usebeamerfont{institute}\insertinstitute\par
+\vfill
+    \usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate\par
+\vspace*{-0.5cm}
+  }
+
+\defbeamertemplate*{frame title}{default}[1][left]
+{
+  %\ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+  \@tempdima=\textwidth%
+  \advance\@tempdima by\beamer@leftmargin%
+  \advance\@tempdima by\beamer@rightmargin%
+  \begin{beamercolorbox}[sep=.5cm,ht=2cm,#1,wd=\the\@tempdima]{frametitle}
+  \leftskip=2.5cm%
+      \usebeamerfont{frametitle}%
+    \vbox{}\vskip-1ex%
+    \if@tempswa\else\csname beamer@fte#1\endcsname\fi%
+    \strut\insertframetitle\strut\par%
+    {%
+      \ifx\insertframesubtitle\@empty%
+      \else%
+      {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
+      \fi
+    }%
+   % \vskip-1ex%
+    \if@tempswa\else\vskip-.3cm\fi% set inside beamercolorbox... evil here...
+  \end{beamercolorbox}%
+}
+
+
+\setbeamercolor*{palette primary}{use=structure,fg=black,bg=}
+
+\useoutertheme{default}
+
+\usefonttheme[]{structurebold}
+
+% \setbeamersize{frametextheight=5cm}
+
+\mode
+<all>
+
+\usecolortheme[RGB={21,116,100}]{structure}
+
+\newcommand{\headwrite}[1]{\vspace*{1.65\baselineskip}}
+\newcommand{\logosinfootline}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Definicje kolorów%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{darkgreen}{RGB}{0,150,0}
+

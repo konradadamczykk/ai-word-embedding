@@ -1,0 +1,191 @@
+% \documentclass[compress]{beamer} % full
+\documentclass[handout,compress]{beamer} % no animations
+
+\usepackage{etex} % necessary for pgfplots
+
+\usetheme{AGH}
+
+\graphicspath{{figures/}}
+\hypersetup{colorlinks, pdfstartview=FitH, bookmarksopen, pdfpagemode=UseNone, pdfpagemode=UseOutlines, linkcolor=black, citecolor=black, filecolor=black, urlcolor=black, pdfauthor={Piotr Cholda}}
+
+% Not all of the following packages are necessary, but the teacher uses many of them :)
+% \usepackage{algorithm}
+% \usepackage{algpseudocode}
+% \usepackage{amsmath,amsfonts}
+% \usepackage{amssymb}
+% \usepackage{array,supertabular}
+\usepackage{bibentry}
+% \usepackage{bm}
+\usepackage{booktabs}
+% \usepackage{cases}
+\usepackage{cite}
+\usepackage{color}
+\definecolor{gold}{HTML}{E6B800}
+\definecolor{lightgreen}{HTML}{99CC00}
+\definecolor{blue}{HTML}{4D94DB}
+\usepackage{colortbl}
+\usepackage{comment}
+% \usepackage{dsfont}
+\usepackage{enumerate}
+\usepackage{exscale,relsize}
+\usepackage{floatflt}
+\usepackage[OT4]{fontenc}
+\usepackage{graphicx}
+\usepackage[latin2]{inputenc}
+% \usepackage{longtable}
+% \usepackage{marvosym}
+% \usepackage{multirow}
+\usepackage{nicefrac}
+\usepackage{paralist}
+\usepackage{rotating}
+\usepackage[tight,footnotesize]{subfigure}
+\usepackage{tabularx}
+\usepackage{tabulary}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{automata}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{fit}
+\usetikzlibrary{matrix}
+\usetikzlibrary{mindmap}
+\usetikzlibrary{patterns}
+\usetikzlibrary{petri}
+\usetikzlibrary{positioning}
+\usetikzlibrary{plothandlers}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{shadings}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{shapes.gates.logic.US}
+\usetikzlibrary{topaths}
+\usetikzlibrary{trees}
+\usepackage{pgfplots} % needs \usepackage{etex} just after \documentclass
+\pgfplotsset{tick scale binop=\times}
+
+\usepackage{trfsigns}
+\usepackage{url}
+\usepackage{wasysym}
+\usepackage{wrapfig}
+
+\setbeamertemplate{footline}[text line]{
+    \leavevmode
+    \hbox{
+        \begin{beamercolorbox}[wd=\paperwidth,ht=0.01ex,dp=0ex,leftskip=0.25cm,rightskip=0cm plus1fil]{title in head/foot}
+            \usebeamerfont{title in head/foot}\logosinfootline
+        \end{beamercolorbox}
+    }
+}
+
+\setbeamertemplate{frametitle continuation}[from second][\insertcontinuationtext]
+
+\setbeamercovered{dynamic}
+\definecolor{lightgreen}{RGB}{218,238,225}
+\setbeamercolor{rafi}{fg=lightgreen,bg=}
+
+\newenvironment{changemargin}[2]{%
+    \begin{list}{}{%
+        \setlength{\topsep}{0pt}%
+        \setlength{\leftmargin}{#1}%
+        \setlength{\rightmargin}{#2}%
+        \setlength{\listparindent}{\parindent}%
+        \setlength{\itemindent}{\parindent}%
+        \setlength{\parsep}{\parskip}%
+    }%
+    \item[]}
+{\end{list}}
+
+% \bstctlcite
+\makeatletter
+    \def\bstctlcite#1{\@bsphack
+    \@for\@citeb:=#1\do{%
+    \edef\@citeb{\expandafter\@firstofone\@citeb}%
+    \if@filesw\immediate\write\@auxout{\string\citation{\@citeb}}\fi}%
+    \@esphack}
+\makeatother
+
+\newtheorem{remark}{Remark}[theorem]
+
+\abovedisplayshortskip=0pt
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\DeclareMathOperator*{\erf}{erf}
+
+\DeclareMathOperator*{\rank}{rank}
+
+\DeclareMathOperator*{\Dom}{Dom}
+
+\DeclareMathOperator*{\opt}{opt}
+
+\DeclareMathOperator*{\conv}{conv}
+
+\DeclareMathOperator*{\diff}{\!\text{d}}
+
+\DeclareMathOperator*{\mean}{\text{E}}
+
+\DeclareMathOperator*{\logistic}{\text{logistic}}
+
+\newcommand{\eqdef}{%
+      \ensuremath{%
+          \stackrel{\text{def}}{=}%
+      }%
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title%<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+{Seminar in \emph{Course Name}}
+\subtitle{Topic of the Seminar Presentation} % Change, please!
+\author[]{Presenters} % Change, please!
+\institute[KT AGH]{Department of Telecommunications}%
+\date{Date} % Change, please!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+    \nobibliography* % Necessary if literature is given
+\end{frame}
+
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight]{./files/tlo}}
+
+\renewcommand{\logosinfootline}{\raisebox{0.12cm}{\begin{beamercolorbox}{rafi}{Seminar \quad Topic (change, please!) \hfill \insertframenumber/\inserttotalframenumber}\end{beamercolorbox}}}
+
+\begin{frame}[allowframebreaks]
+    \frametitle{Outline}
+    \tableofcontents
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Topic of the Presentation} % Change, please!
+
+\input{./fragments/slides-seminar-topic} % Change, please!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{plain}
+\nobibliography{bibliographyfile} % your bibliography file
+
+\end{document}
