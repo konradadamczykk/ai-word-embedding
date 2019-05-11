@@ -6,14 +6,10 @@ Intro to word embeddings.
   \url{https://www.tensorflow.org/alpha/tutorials/text/word_embeddings}.
 \newblock Accessed: 2019-05-11.
 
-\bibitem{Lyda07a}
-Robert Lyda and James Hamrock.
-\newblock {Using Entropy Analysis to Find Encrypted and Packed Malware}.
-\newblock {\em {IEEE} Security \& Privacy}, 5(2):40--45, March/April 2007.
-
-\bibitem{Moon05a}
-Todd~K. Moon.
-\newblock {\em Error Correction Coding}.
-\newblock John Wiley \& Sons, Inc., Hoboken, NJ, 2005.
+\bibitem{towardsdatascience}
+Intro to word embeddings.
+\newblock
+  \url{https://towardsdatascience.com/introduction-to-word-embedding-and-word2vec-652d0c2060fa?fbclid=IwAR3c2RpZOmbWC84_mKFtRI6PwTD7vJRxiquKPp2Y3en3_OfDpBsWjjSinv8}.
+\newblock Accessed: 2019-05-11.
 
 \end{thebibliography}
