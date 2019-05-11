@@ -21,16 +21,27 @@
 \begin{frame}
 	\frametitle{One hot encoding}
 	
-	
-		\huge {What = [1, 0, 0, 0, 0]}
-		 \newline
-		\huge{a = [0, 1, 0, 0, 0]}
-		\newline
-		\huge{lovely = [0, 0, 1, 0, 0]}
-		\newline
-		\huge{nice = [0, 0, 0, 1, 0]}
-		\newline
-		\huge{day = [0, 0, 0, 0, 1]}
+\begin{table}[h]
+	\hspace{15mm}
+	\huge
+	\begin{tabular}{rcccccc}
+		What & = & [1 & 0 & 0 & 0 & 0] \\
+		a & = & [0 &  1 &  0 &  0 & 0] \\
+		lovely & = & [0 & 0& 1& 0& 0] \\
+		nice & = & [0 &0& 0& 1& 0] \\
+		day & = & [0 &0& 0& 0& 1] \\
+	\end{tabular}
+\end{table}
+
+%		\huge {What = [1, 0, 0, 0, 0]}
+%		 \newline
+%		\huge{a = [0, 1, 0, 0, 0]}
+%		\newline
+%		\huge{lovely = [0, 0, 1, 0, 0]}
+%		\newline
+%		\huge{nice = [0, 0, 0, 1, 0]}
+%		\newline
+%		\huge{day = [0, 0, 0, 0, 1]}
 
 \end{frame}
 
@@ -60,10 +71,66 @@
 \begin{frame}
 \frametitle{Unique number encoding}
 
+\begin{table}[h]
+	\hspace{15mm}
+	\huge
+	\begin{tabular}{rcl}
+		What & = & [1] \\
+		a & = & [2]\\
+		lovely & = & [3]\\
+		nice & = & [4]\\
+		day & = & [5]\\
+	\end{tabular}
+\end{table}
+
+%	\huge {What = [1]}
+%	\newline
+%	\huge{a = [2]}
+%	\newline
+%	\huge{lovely = [3]}
+%	\newline
+%	\huge{nice = [4]}
+%	\newline
+%	\huge{day = [5]}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Unique number encoding ctd.}
+
 	\begin{itemize}
-		\item Words completely independent of each other
-		\item Inefficient approach: vector is sparse
+		\item[$+$] Efficient - dense vector
+		\item[$-$] Encoding arbitrary - does not catch relationships between words
+		\item[$-$] Can be challenging for a model to interpret
 	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Word embeddings}
+
+\begin{table}[h]
+	\hspace{15mm}
+	\huge
+	\begin{tabular}{rcccccc}
+		What & = & [1.2 & -0.1 & 4.3 & 3.2] \\
+		a & = & [0.4 & 2.5 & -0.9 & 0.5] \\
+		lovely & = & [2.1 & 0.3 & 0.1& 0.4] \\
+		nice & = & [2.0& 0.4& 0.3& 0.5] \\
+		day & = & [3.0& -0.6& 3.5& -0.8] \\
+	\end{tabular}
+\end{table}
+
+
+%	\huge {What = [1.2, -0.1, 4.3, 3.2]}
+%	\newline
+%	\huge{a = [0.4, 2.5, -0.9, 0.5]}
+%	\newline
+%	\huge{lovely = [2.1, 0.3, 0.1, 0.4]}
+%	\newline
+%	\huge{nice = [2.0, 0.4, 0.3, 0.5]}
+%	\newline
+%	\huge{day = [3.0, -0.6, 3.5, -0.8]}
 
 \end{frame}
 
