@@ -1,5 +1,11 @@
 \begin{thebibliography}{1}
 
+\bibitem{tensor}
+Intro to word embeddings.
+\newblock
+  \url{https://www.tensorflow.org/alpha/tutorials/text/word_embeddings}.
+\newblock Accessed: 2019-05-11.
+
 \bibitem{Lyda07a}
 Robert Lyda and James Hamrock.
 \newblock {Using Entropy Analysis to Find Encrypted and Packed Malware}.
