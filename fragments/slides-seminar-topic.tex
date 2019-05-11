@@ -19,7 +19,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Introduction}
+	\frametitle{One hot encoding}
 	
 	
 		\huge {What = [1, 0, 0, 0, 0]}
@@ -35,12 +35,45 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Introduction}
+\frametitle{One hot encoding ctd.}
 
-\begin{itemize}
-	\item Words with similar context occupy close spatial positions
-	\item The cosine of the angle between such vectors should be close to 1 (angle close to 0)
-\end{itemize}
+	\begin{itemize}
+		\item Words completely independent of each other
+		\item Inefficient approach: vector is sparse
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{One hot encoding ctd.}
+
+	Example:
+	\begin{itemize}
+		\item Dictionary of 10,000 words
+		\item One hot encode each word
+		\item Each vector's elements are 99.99\% zeros!
+		
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Unique number encoding}
+
+	\begin{itemize}
+		\item Words completely independent of each other
+		\item Inefficient approach: vector is sparse
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Word embeddings}
+
+	\begin{itemize}
+		\item Words with similar context occupy close spatial positions
+		\item The cosine of the angle between words' vectors should be close to 1 (angle close to 0)
+	\end{itemize}
 
 \end{frame}
 
