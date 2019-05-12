@@ -7,9 +7,14 @@ Intro to word embeddings.
 \newblock Accessed: 2019-05-11.
 
 \bibitem{towardsdatascience}
-Intro to word embeddings.
+Introduction to word embedding and word2vec.
 \newblock
   \url{https://towardsdatascience.com/introduction-to-word-embedding-and-word2vec-652d0c2060fa?fbclid=IwAR3c2RpZOmbWC84_mKFtRI6PwTD7vJRxiquKPp2Y3en3_OfDpBsWjjSinv8}.
 \newblock Accessed: 2019-05-11.
+
+\bibitem{challenges}
+Word embeddings and their challenges.
+\newblock \url{http://blog.aylien.com/word-embeddings-and-their-challenges/}.
+\newblock Accessed: 2019-05-12.
 
 \end{thebibliography}

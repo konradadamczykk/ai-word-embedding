@@ -81,7 +81,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{One hot encoding ctd.}
+\frametitle{One hot encoding (cont.)}
 
 	\begin{itemize}
 		\item Words completely independent of each other
@@ -95,7 +95,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{One hot encoding ctd.}
+\frametitle{One hot encoding (cont.)}
 
 	Example:
 	\begin{itemize}
@@ -143,7 +143,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Unique number encoding ctd.}
+\frametitle{Unique number encoding (cont.)}
 
 	\begin{itemize}
 		\item[$+$] Efficient - dense vector
@@ -331,11 +331,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{ALalalal}
-\begin{center}
-	.....One of the main limitations of word embeddings (word vector space models in general) is that possible meanings of a word are conflated into a single representation (a single vector in the semantic space). Sense embeddings[17] are proposed as a solution to this problem: individual meanings of words are represented as distinct vectors in the space.....
-	
-\end{center}
+\frametitle{Problems and limitations}
+
+	\begin{itemize}
+		\item Multiple meanings of a word: solution - \textit{Sense} embeddings
+		\item Inability to handle unknown or out-of-vocabulary (OOV) words
+		\item Scaling to new languages
+		\item No shared representations at sub-word levels
+	\end{itemize}
 
 \end{frame}
 
@@ -359,8 +362,13 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-\input{bibliographyfile}
+\begin{frame}[allowframebreaks]
+\frametitle{References}
+%\input{bibliographyfile}
+\bibliographystyle{plain}
+\nocite{*}
+\setbeamertemplate{bibliography item}[online]
+\bibliography{bibliographyfile}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
