@@ -324,23 +324,88 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{}
+\frametitle{Word embedding models}
 
-\begin{center}
-	\Huge {Word embedding models}
-\end{center}
+	\begin{itemize}
+		\item Training approaches
+		\item word2vec
+		\item GloVe
+		\item FastText
+	\end{itemize}
+
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{GloVe}
+\subsection{Training approaches}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{GloVe}
+\frametitle{How to train my embedding model?}
+	
+	\begin{itemize}
+		\item CBOW
+		\item Skip-gram
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{CBOW}
+	\framesubtitle{Words representation}
+
+	\begin{itemize}
+		\item Continuous Bag-of-Words
+		\item Prediction of current words based on context
+		\item Context is determined by surrounding words
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{CBOW}
+	\framesubtitle{Words representation}
+
+	\begin{figure}
+		\includegraphics[width=8cm]{./figures/cbow_simple}
+		\caption{Simple CBOW model with one word in the context}
+	\end{figure}
+
+\end{frame}
 
 
+\begin{frame}
+\frametitle{CBOW}
+	\framesubtitle{Words representation}
+
+	\begin{center}
+		\includegraphics[width=6cm]{./figures/cbow_eq}
+	\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Skip-gram}
+	\framesubtitle{Words representation}
+
+	\begin{itemize}
+		\item Continuous Skip-gram
+		\item Predicting the surrounding words based on the context
+		\item Context is the current word
+	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{CBOW vs Skip-gram}
+	\framesubtitle{Words representation}
+
+	\begin{figure}
+		\includegraphics[width=6cm]{./figures/cbow_skip_gram}
+		\caption{CBOW vs Skip-gram}
+	\end{figure}
+	
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -351,19 +416,87 @@
 
 \begin{frame}
 \frametitle{Word2Vec}
+	\framesubtitle{Word embedding models}
 
+	\begin{itemize}
+		\item Created by researchers at Google in 2013
+		\item Can use either CBOW or skip-gram
+		\item Input is a corpus of text
+		\item Produces vector space with unique word 
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Word2Vec}
+	\framesubtitle{Interesting parameters}
+
+	\begin{itemize}
+		\item Dimensionality!
+		\item Training algorithm - softmax vs negative sampling
+		\item Context window
+	\end{itemize}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{fastext}
+\subsection{GloVe}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{fastext}
+\frametitle{GloVe}
+	\framesubtitle{Word embedding models}
 
+	\begin{itemize}
+		\item Global Vectors for Word Representation
+		\item Comes from Stanford University, open-source
+		\item Kind of extension of word2vec
+		\item Training performed on aggregated, global word-word co-occurence statistics
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{GloVe}
+	\framesubtitle{Word embedding models}
+
+	\begin{figure}
+		\includegraphics[width=9cm]{./figures/glove}
+		\caption{Co-occurence statistics of words}
+	\end{figure}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{FastText}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{FastText}
+	\framesubtitle{Word embedding models}
+
+	\begin{itemize}
+		\item Incorporate sub-word information!
+		\item Naturally support out-of-vocabulary words
+		\item Uses skip-gram with negative sampling
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{FastText}
+	\framesubtitle{Word embedding models}
+
+	\begin{figure}
+		\includegraphics[width=9cm]{./figures/fasttext}
+		\caption{FastText subwords example}
+	\end{figure}
 
 \end{frame}
 
