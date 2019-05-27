@@ -1,3 +1,13 @@
+% to improve:
+%-> slide 14 and many others: PIC1 and RES1;
+%
+%-> following slide 37: SUM1.
+
+%  https://docs.google.com/spreadsheets/d/1_obhAgInfD2sZQ89kVKmNwD_nZ6X4ow54kGN0DR5l4c/edit#gid=0
+
+%The slides generally cover the topic in a good way, but I do like to see more numerical examples to show the audience how the concepts work, how it is done in practice and to make it more tangible. Are you able to show a live demon (e.g., with colab)?
+
+
 \section{Introduction}
 
 \begin{frame}
@@ -18,7 +28,7 @@
 \frametitle{Introduction}
 
 \begin{center}
-	\textit{Word embeddings are one of the few currently successful applications of unsupervised learning. Their main benefit arguably is that they don't require expensive annotation, but can be derived from large unannotated corpora that are readily available. Pre-trained embeddings can then be used in downstream tasks that use small amounts of labeled data.}
+	\textit{Word embeddings are one of the few currently successful applications of unsupervised learning. Their main benefit arguably is that they do not require expensive annotation, but can be derived from large unannotated corpora that are readily available. Pre-trained embeddings can then be used in downstream tasks that use small amounts of labeled data.}
 \end{center}
 \flushright{NLP Research Scientist, Sebastian Ruder}
 \end{frame}
@@ -43,12 +53,10 @@
 \frametitle{Encoding text}
 
 
-	\begin{itemize}
-	\huge \textbf{Why we need to encode text?}
+	\huge \textbf{Why do we need to encode text?}
 	\newline 
-		\newline 
+	\newline 
 	\normalsize{Machine learning models take vectors (arrays of numbers) as input.}
-\end{itemize}
 
 \end{frame}
 
@@ -95,7 +103,7 @@
 \frametitle{One hot encoding (cont.)}
 
 	\begin{itemize}
-		\item Words completely independent of each other
+		\item Words are completely independent of each other
 		\item Inefficient approach: vector is sparse
 	\end{itemize}
 
@@ -157,8 +165,8 @@
 \frametitle{Unique number encoding (cont.)}
 
 	\begin{itemize}
-		\item[$+$] Efficient - dense vector
-		\item[$-$] Encoding arbitrary - does not catch relationships between words
+		\item[$+$] Efficient --- dense vector
+		\item[$-$] Encoding arbitrary --- does not catch relationships between words
 		\item[$-$] Can be challenging for a model to interpret
 	\end{itemize}
 
@@ -217,7 +225,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-	\frametitle{Word Embedding}
+	\frametitle{Word embedding}
 
 	\begin{figure}
 		\includegraphics[width=4cm]{./figures/Groups}
@@ -235,7 +243,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-	\frametitle{Word Embedding}
+	\frametitle{Word embedding}
 
 	\begin{figure}
 		\includegraphics[width=4cm]{./figures/Group_synonym}
@@ -253,7 +261,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-	\frametitle{Word Embedding}
+	\frametitle{Word embedding}
 
 	\begin{figure}
 		\includegraphics[width=4cm]{./figures/Group_antonyms}
@@ -271,7 +279,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-	\frametitle{Word Embedding}
+	\frametitle{Word embedding}
 
 	\begin{figure}
 		\includegraphics[width=4cm]{./figures/Group_scale}
@@ -289,7 +297,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-	\frametitle{Word Embedding}
+	\frametitle{Word embedding}
 
 	\begin{figure}
 		\includegraphics[width=4cm]{./figures/Group_hyponym}
@@ -306,7 +314,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-	\frametitle{Word Embedding}
+	\frametitle{Word embedding}
 
 	\begin{figure}
 		\includegraphics[width=4cm]{./figures/Group_context}
@@ -329,7 +337,7 @@
 
 	\begin{itemize}
 		\item Training approaches
-		\item word2vec
+		\item Word2Vec
 		\item GloVe
 		\item FastText
 	\end{itemize}
@@ -365,7 +373,7 @@
 \begin{frame}
 \frametitle{CBOW}
 	\framesubtitle{Words representation}
-
+%
 	\begin{figure}
 		\includegraphics[width=8cm]{./figures/cbow_simple}
 		\caption{Simple CBOW model with one word in the context}
@@ -378,9 +386,11 @@
 \frametitle{CBOW}
 	\framesubtitle{Words representation}
 
-	\begin{center}
-		\includegraphics[width=6cm]{./figures/cbow_eq}
-	\end{center}
+%	\begin{center}
+%		\includegraphics[width=6cm]{./figures/cbow_eq}
+%	\end{center}
+
+$$p(w_j|w_I)= \frac{\exp({v'_{w_j}}^{T}v_{w_I})}{ \sum_{j'=1}^{V} \exp({v'_{w_{j'}}}^{T}v_{w_I})}$$
 
 \end{frame}
 
@@ -434,7 +444,7 @@
 
 	\begin{itemize}
 		\item Dimensionality!
-		\item Training algorithm - softmax vs negative sampling
+		\item Training algorithm --- softmax vs negative sampling
 		\item Context window
 	\end{itemize}
 
@@ -453,7 +463,7 @@
 	\begin{itemize}
 		\item Global Vectors for Word Representation
 		\item Comes from Stanford University, open-source
-		\item Kind of extension of word2vec
+		\item Kind of extension of Word2Vec
 		\item Training performed on aggregated, global word-word co-occurence statistics
 	\end{itemize}
 
@@ -525,8 +535,8 @@
 	\frametitle{Natural Language Processing}
 	
 	\begin{itemize}
-		\item If user search for "Dell notebook battery size" we would like to match it also with "Dell laptop battery capacity"
-		\item If user search for "Cracow Motel" we would like to match it also with "Krakow Hotel"
+		\item If user search for ``Dell notebook battery size'' we would like to match it also with ``Dell laptop battery capacity"
+		\item If user search for ``Cracow Motel'' we would like to match it also with ``Krakow Hotel''
 	\end{itemize}
 	
 \end{frame}
@@ -553,7 +563,7 @@
 \frametitle{Other domains}
 
 \begin{itemize}
-	\item Word2vec can catch relationships and contexts in songs the user listens to
+	\item Word2Vec can catch relationships and contexts in songs the user listens to
 	\item Data can be used for real-time music recommendation
 \end{itemize}
 
@@ -569,12 +579,38 @@
 \frametitle{Problems and limitations}
 
 	\begin{itemize}
-		\item Multiple meanings of a word: solution - \textit{Sense} embeddings
+		\item Multiple meanings of a word: solution --- \textit{Sense} embeddings
 		\item Inability to handle unknown or out-of-vocabulary (OOV) words
 		\item Scaling to new languages
 		\item No shared representations at sub-word levels
 	\end{itemize}
 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Summary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+	\frametitle{}
+	
+	\begin{center}
+		\Huge {Summary}
+	\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+	\frametitle{Summary}
+	
+	\begin{itemize}
+		\item ...
+		\item ...
+	\end{itemize}
+	
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
